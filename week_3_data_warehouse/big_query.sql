@@ -3,6 +3,12 @@ SELECT station_id, name FROM
     bigquery-public-data.new_york_citibike.citibike_stations
 LIMIT 100;
 
+-- Creating external table referring to gcs path - ATHENS
+CREATE OR REPLACE EXTERNAL TABLE `northern-sight-398717.trips_data_all.external_green_tripdata`
+OPTIONS (
+  format = 'PARQUET',
+  uris = ['gs://prefect-bucket-northern-sight/green/*.parquet']
+);
 
 -- Creating external table referring to gcs path
 CREATE OR REPLACE EXTERNAL TABLE `taxi-rides-ny.nytaxi.external_yellow_tripdata`

@@ -5,6 +5,8 @@ OPTIONS (
 );
 
 
+
+
 SELECT count(*) FROM `taxi-rides-ny.nytaxi.fhv_tripdata`;
 
 
